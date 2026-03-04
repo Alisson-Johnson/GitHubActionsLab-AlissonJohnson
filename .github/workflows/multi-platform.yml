@@ -1,0 +1,52 @@
+## YAML Template.
+---
+name: GitHub Actions Lab Multiplatform
+
+on:
+    pull_request:
+        branches: ["master"]
+jobs:
+      ubuntu-job:
+        name: Ubuntu Job
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out code
+              uses: actions/checkout@v4
+            - name: Print System Info
+              run: uname -a
+            - name: Show OS-specific behaviour
+              run: ls -la
+            - name: Create a simple file
+              run: echo "Hello from Alisson" > file.txt
+            - name: Display file content
+              run: cat file.txt
+      windows-job:
+          name: Windows Job
+          runs-on: windows-latest
+          steps:
+              - name: Check out code
+                uses: actions/checkout@v4
+              - name: Print System Info
+                run: systeminfo
+              - name: Show OS-specific behaviour
+                run: dir
+              - name: Create a simple file
+                run: echo Hello from Alisson > file.txt
+              - name: Display file content
+                run: type file.txt
+      macos-job:
+          name: MacOS Job
+          runs-on: macos-latest
+          steps:
+              - name: Check out code
+                uses: actions/checkout@v4
+              - name: Print System Info
+                run: system_profiler SPSoftwareDataType
+              - name: Show OS-specific behaviour
+                run: sw_vers
+              - name: Create a simple file
+                run: echo "Hello from Alisson" > file.txt
+              - name: Display file content
+                run: cat file.txt
+          
+             
