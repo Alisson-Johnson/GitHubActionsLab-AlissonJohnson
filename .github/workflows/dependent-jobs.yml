@@ -9,34 +9,34 @@ jobs:
         name: Build Job
         runs-on: ubuntu-latest
         steps:
-            -name: Start Build
-            run: echo "Building application..."
-            -name: Simulate Build
-            run: sleep 2
-            -name: Complete Build
-            run: echo "Build Completed!"
+            - name: Start Build
+              run: echo "Building application..."
+            - name: Simulate Build
+              run: sleep 2
+            - name: Complete Build
+              run: echo "Build Completed!"
     test:
         name: Test Job
         needs: build
         runs-on: ubuntu-latest
         steps:
-            -name: Start Tests
-            run: echo "Running tests..."
-            -name: Simulate Tests
-            run: sleep 5
-            -name: Complete Tests
-            run: echo "Tests Completed!"
+            - name: Start Tests
+              run: echo "Running tests..."
+            - name: Simulate Tests
+              run: sleep 5
+            - name: Complete Tests
+              run: echo "Tests Completed!"
     deploy:
         name: Deploy Job
         needs: test
         runs-on: ubuntu-latest
         steps:
-            -name: Deploy Job
-            run: echo "Deploying application..."
-            -name: Simulate Deployment
-            run: sleep 3
-            -name: Complete Deployment
-            run: echo "Application Deployed Successfully!"
+            - name: Deploy Job
+              run: echo "Deploying application..."
+            - name: Simulate Deployment
+              run: sleep 3
+            - name: Complete Deployment
+              run: echo "Application Deployed Successfully!"
             
              
             
